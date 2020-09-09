@@ -22,5 +22,5 @@ urlpatterns = [
     path('home', HomeView.as_view()),
     path('index', IndexView.as_view()),
     path('profile', ProfileView.as_view()),
-    
+    path('', HomeView.as_view()),
 ]
