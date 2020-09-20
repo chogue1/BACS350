@@ -1,7 +1,7 @@
 from django.views.generic import TemplateView
 
 class AboutView(TemplateView):
-    template_name = 'base.html'
+    template_name = 'superhero-theme.html'
     def get_context_data(self, **kwargs):
         return {
             'title': 'My About Page',
@@ -9,18 +9,18 @@ class AboutView(TemplateView):
         }
     
 class HomeView(TemplateView):
-    template_name = 'base.html'
+    template_name = 'superhero-theme.html'
     def get_context_data(self, **kwargs):
         return {
-            'title': 'My Home Page',
+            'title': 'The SuperHero News Network',
             'body': 'There are many like this but this one is mine',
         }
     
-class ProfileView(TemplateView):
-    template_name = 'base.html'
+class IndexView(TemplateView):
+    template_name = 'superhero-theme.html'
     def get_context_data(self, **kwargs):
         return {
-            'title': 'My Profile Page',
+            'title': 'The Superhero Index',
             'body': 'There are many like this but this one is mine',
         }
     
