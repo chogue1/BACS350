@@ -1,4 +1,12 @@
-<h1>{{ title }}</h1>
-<p>
-    {{ body}}
-</p>
+{% load static %}
+<html>
+    <link rel="stylesheet" href="{% static 'css/w3fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'css/w3fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/w3temp.css' %}">
+    <h1>Welcome to SuperHero News</h1>
+    <a href="index.html">Index</a>
+    <a href="home">Go HOME</a>
+    <a href="about.html">About</a>
+    {% block content %}
+    {% endblock %}
+</html>

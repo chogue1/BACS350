@@ -15,17 +15,24 @@ Including another URLconf
 """
 from django.urls import path
 from hero.views import HulkView, WidowView, LanternView, SpiderView, ThorView
-from pages.views import HeroView, AboutView, IndexView, HomeView
+from pages.views import AboutView, IndexView, HomeView
 
 urlpatterns = [
+    path('about.html', AboutView.as_view()),
     path('about', AboutView.as_view()),
+    path('home.html', HomeView.as_view()),
     path('home', HomeView.as_view()),
+    path('index.html', IndexView.as_view()),
     path('index', IndexView.as_view()),
     path('', HomeView.as_view()),
+    path('hulk.html', HulkView.as_view()),
     path('hulk', HulkView.as_view()),
     path('black_widow', WidowView.as_view()),
-    path('hero/<str:identity>', HeroView.as_view()),
     path('thor', ThorView.as_view()),
     path('spider_man', SpiderView.as_view()),
     path('green_lantern', LanternView.as_view()),
+    path('black_widow.html', WidowView.as_view()),
+    path('thor.html', ThorView.as_view()),
+    path('spider_man.html', SpiderView.as_view()),
+    path('green_lantern.html', LanternView.as_view()),
 ]
