@@ -1,0 +1,10 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block content %}
+    <ul>
+        {% for hero in heroeslist %}
+            <a href='{{ hero.identity }}.html'>{{ hero.name }}</a><p></p>
+        {% endfor %}
+    </ul>
+{% endblock content %}
+        
