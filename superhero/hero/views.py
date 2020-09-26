@@ -2,7 +2,7 @@ from django.views.generic import ListView, TemplateView
 from .models import Superhero
 
 class HomeView(TemplateView):
-    template_name = 'home.html'
+    template_name = 'superhero_theme.html'
 
 class IndexView(ListView):
     model = Superhero
