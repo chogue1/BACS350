@@ -1,0 +1,20 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/w3fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'css/w3fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/w3temp.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    <title>MY HERO DATABASE</title>
+</head>
+    
+<body class="bg-light text-dark">
+    {% block content %}
+    
+</body>
+    <h1>This is my Hero Database!</h1><p></p>
+    <p>Welcome to my hero database, make yourself at home.</p>
+    {% block content %}{% endblock content %}
+</html>
