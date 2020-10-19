@@ -22,16 +22,16 @@ class HeroDetail(DetailView):
         return kwargs
 
 class HeroIndex(ListView):
-    template_name = "hero_index.html"
+    template_name = "hero_list.html"
     model = Superhero
 
 class HeroCreate(CreateView):
-    template_name = "hero_create.html"
+    template_name = "hero_add.html"
     model = Superhero
     fields = '__all__'
 
 class HeroUpdate(UpdateView):
-    template_name = "hero_update.html"
+    template_name = "hero_edit.html"
     model = Superhero
     fields = '__all__'
 

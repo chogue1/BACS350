@@ -1,10 +1,9 @@
 from django.urls import path
-from .views import HomeView, IndexView
+from hero.views import HeroCreate, HeroIndex, HeroUpdate, HeroDetail
 
 urlpatterns = [
-    path('', HomeView.as_view(), name='home'),
-    path('home', HomeView.as_view(), name='home'),
-    path('home.html', HomeView.as_view(), name='home'),
-    path('index', IndexView.as_view(), name='index'),
-    path('index.html', IndexView.as_view(), name='index'),
+    path('', HeroIndex.as_view(), name='hero_list'),
+    path('<int:pk>', HeroDetail.as_view(), name='hero_detail'),
+    path('add', HeroCreate.as_view(), name='hero_add'),
+    path('<int:pk>/', HeroUpdate.as_view(), name='hero_edit'),
 ]
