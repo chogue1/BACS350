@@ -3,14 +3,14 @@ from django.views.generic.edit import CreateView, UpdateView
 from .models import Superhero
 from os.path import exists
 
-"""
-class HomeView(TemplateView):
-    template_name = 'hero_detail.html'
+
+# class HomeView(TemplateView):
+#     template_name = 'hero_detail.html'
     
-    def get_context_data(self,**kwargs):
-        hero = Superhero.objects.get(pk=1)
-        return {'hero': hero}
-"""
+#     def get_context_data(self,**kwargs):
+#         hero = Superhero.objects.get(pk=1)
+#         return {'hero': hero}
+
 class HeroDetailView(DetailView):
     template_name = "hero_detail.html"
     model = Superhero
