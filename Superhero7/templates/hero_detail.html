@@ -7,8 +7,11 @@
         <div class="text-center">
 
             <a href="/" class="btn btn-primary m-3">Hero List</a>
+
             <!--class based on bootstrap command to style the container-->
+            
             <div class="card m-3 mb-5">
+
                 <div class="card-header bg-primary">
                     <h2>
                         <a class="text-light" href="{{ object.pk }}">{{ object.name }}</a>
@@ -33,10 +36,12 @@
 
                         </div>
                         <div class="col-lg-6">
+
                             {% if missing %}
                             <p><i class="fa fa-user fa-6x"></i></p>
                             {% endif %}
-                            <!--Conditional to rationalize whether the object attribute is missing-->
+
+                            
                             <img width="300" src="/static/{{ object.image }}" alt="{{ object.identity }}">
                         </div>
 
