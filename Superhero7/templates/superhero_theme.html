@@ -11,10 +11,30 @@
 </head>
     
 <body class="bg-light text-dark">
+
     {% block content %}
+
+        {% block header %}
+            <header>
+                <h1>This is my Hero Database!</h1>
+                <p>Welcome to my hero database, make yourself at home.</p>
+            </header>
+        {% endblock header}
+
+        {% block main %}
+            <main>
+
+            </main>
+        {% endblock main %}
+
+        {% block footer %}
+            <footer>
+
+            </footer>
+        {% endblock footer %}
     
+    {% endblock content %}
+
 </body>
-    <h1>This is my Hero Database!</h1><p></p>
-    <p>Welcome to my hero database, make yourself at home.</p>
-    {% block content %}{% endblock content %}
+    
 </html>
