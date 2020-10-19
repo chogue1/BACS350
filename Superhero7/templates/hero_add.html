@@ -8,8 +8,6 @@
     <!--Adds a new hero to the database-->
     
     <form action="" method="post">{% csrf_token %}
-    
-        <!-- Without Crispy Forms {{ form.as_p }}  -->
         
         {{ form|crispy }}
        

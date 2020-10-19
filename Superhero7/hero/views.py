@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.views.generic import DetailView, ListView, TemplateView
 from django.views.generic.edit import CreateView, UpdateView
 from .models import Superhero
+from os.path import exists
+
 """
 class HomeView(TemplateView):
     template_name = 'hero_detail.html'
@@ -10,7 +12,7 @@ class HomeView(TemplateView):
         hero = Superhero.objects.get(pk=1)
         return {'hero': hero}
 """
-class HeroDetail(DetailView):
+class HeroDetailView(DetailView):
     template_name = "hero_detail.html"
     model = Superhero
 
@@ -21,16 +23,16 @@ class HeroDetail(DetailView):
             kwargs['missing'] = True
         return kwargs
 
-class HeroIndex(ListView):
+class HeroListView(ListView):
     template_name = "hero_list.html"
     model = Superhero
 
-class HeroCreate(CreateView):
+class HeroAddView(CreateView):
     template_name = "hero_add.html"
     model = Superhero
     fields = '__all__'
 
-class HeroUpdate(UpdateView):
+class HeroEditView(UpdateView):
     template_name = "hero_edit.html"
     model = Superhero
     fields = '__all__'
