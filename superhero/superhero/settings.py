@@ -56,7 +56,7 @@ ROOT_URLCONF = 'superhero.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [str(BASE_DIR.joinpath('templates'))], #directs the views to the templates
+        'DIRS': ['templates'], #directs the views to the templates
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

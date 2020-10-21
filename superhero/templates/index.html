@@ -3,7 +3,7 @@
 {% block content %}
     <ul>
         {% for hero in heroeslist %}
-            <a href='{{ hero.identity }}.html'>{{ hero.name }}</a><p></p>
+            <a href='hero/{{ hero.identity }}.html'>{{ hero.name }}</a><p></p>
         {% endfor %}
     </ul>
 {% endblock content %}

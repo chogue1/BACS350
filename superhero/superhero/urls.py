@@ -15,8 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from hero.views import HomeView, IndexView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('hero.urls'))#
+    path('', HomeView.as_view(), name='home'),
+    path('home', HomeView.as_view(), name='home'),
+    path('home.html', HomeView.as_view(), name='home'),
+    path('index', IndexView.as_view(), name='index'),
+    path('index.html', IndexView.as_view(), name='index'),
+    path('hero/', include('hero.urls'))#
 ]
