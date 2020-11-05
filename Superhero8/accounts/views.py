@@ -11,6 +11,6 @@ class RegisterForm(ModelForm):
 
     class Meta:
         model = User
-        fields = ["username","password","email"]
+        fields = ["username","password","email","first_name","last_name"]
     
 # Create your views here.
