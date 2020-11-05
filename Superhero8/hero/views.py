@@ -1,5 +1,5 @@
 from django.views.generic import DetailView, ListView, TemplateView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from os.path import exists
 
 from .models import Superhero

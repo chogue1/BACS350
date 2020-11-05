@@ -1,10 +1,16 @@
 from django.shortcuts import render
 from django.forms import ModelForm
-from manager.models import User
+from accounts.models import User
 
 class RegisterForm(ModelForm):
     username = forms.CharField(max_length=25)
     password = forms.CharField(widget=PasswordInput)
     email = forms.CharField(widget=EmailInput)
+    first_name = forms.CharField(max_length=25)
+    last_name = forms.CharField(max_length=35)
+
+    class Meta:
+        model = User
+        fields = ["username","password","email"]
     
 # Create your views here.
