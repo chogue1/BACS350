@@ -1,4 +1,4 @@
-
+# hero/urls.py
 from django.urls import path
 from hero.views import HeroAddView, HeroListView, HeroEditView, HeroDetailView
 
