@@ -6,7 +6,10 @@ class HeroModelTest(TestCase):
     
     def setUp(self):
         Superhero.objects.create(name='Macho-Man Randy Savage',
-                                identity='slim_jim_hero',)
+                                identity='slim_jim_hero',
+                                description='this is the slim jim hero',
+                                strength='powerful diaphragm shout',
+                                weakness='smalls')
         
     def test_hero_name(self):
         hero = Superhero.objects.get(id=1)

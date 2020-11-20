@@ -1,10 +1,6 @@
 {% extends 'superhero_theme.html' %}
 {% load crispy_forms_tags %}
 
-{% block authcontent %}
-
-{% endblock authcontent %}
-
 {% if user.is_authenticated %}
 {% block content %}
 
@@ -21,5 +17,15 @@
     </form>
     
 </div>
-
 {% endblock content %}
+
+{% else %}
+{% block content %}
+
+<div class="container">
+      
+    <h1> You need to be logged in to perform this action </h1>
+    
+</div>
+{% endblock content %}
+{% endif %}

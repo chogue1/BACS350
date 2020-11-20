@@ -1,12 +1,14 @@
 {% extends 'superhero_theme.html' %}
 {% load crispy_forms_tags %}
-{% block content %}
 
-{% if user.is_authenticated %}
-    {% block content %}
+{% block content %}
+    {% if user.is_authenticated %}
+    
+
         <div class="container">
       
-            <h1>Edit Hero</h1>
+            <h1>Add New Hero</h1>
+            <!--Adds a new hero to the database-->
     
             <form action="" method="post">{% csrf_token %}
         
@@ -16,15 +18,17 @@
             </form>
     
         </div>
-    {% endblock content %}
-{% else %}
-    {% block content %}
+    
+
+    {% else %}
+    
+
         <div class="container">
       
             <h1> You need to be logged in to perform this action </h1>
     
         </div>
-    {% endblock content %}
-{% endif %}
+    
+    {% endif %}
 
-
+{% endblock content %}
