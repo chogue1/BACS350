@@ -8,6 +8,4 @@ urlpatterns = [
     path('add', HeroAddView.as_view(), name='hero_add'),
     path('<int:pk>/', HeroEditView.as_view(), name='hero_edit'),
     path('delete', HeroDeleteView.as_view(), name='hero_delete'),
-    path('register/', RegisterForm.as_view(), name='register'),
-    path('accounts/', include('django.contrib.auth.urls'))
 ]

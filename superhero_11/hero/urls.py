@@ -1,6 +1,6 @@
 # hero/urls.py
 from django.urls import path
-from hero.views import HeroAddView, HeroListView, HeroEditView, HeroDetailView
+from hero.views import HeroAddView, HeroListView, HeroEditView, HeroDetailView, HeroDeleteView
 
 urlpatterns = [
     path('', HeroListView.as_view(), name='hero_list'),

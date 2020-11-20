@@ -1,7 +1,7 @@
 # hero/views.py
 from django.shortcuts import render
 
-from django.views.generic import DetailView, ListView, TemplateView
+from django.views.generic import DetailView, ListView, TemplateView, DeleteView
 from django.views.generic.edit import CreateView, UpdateView
 from os.path import exists
 
@@ -28,6 +28,10 @@ class HeroDetailView(DetailView):
 
 class HeroListView(ListView):
     template_name = "hero_list.html"
+    model = Superhero
+
+class HeroDeleteView(DeleteView):
+    template_name = "hero_delete.html"
     model = Superhero
 
 class HeroAddView(CreateView):
