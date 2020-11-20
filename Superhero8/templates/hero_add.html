@@ -1,6 +1,12 @@
-{% extends 'page_theme.html' %}
+{% extends 'superhero_theme.html' %}
 {% load crispy_forms_tags %}
-{% block main %}
+
+{% block authcontent %}
+
+{% endblock authcontent %}
+
+{% if user.is_authenticated %}
+{% block content %}
 
 <div class="container">
       
@@ -16,4 +22,4 @@
     
 </div>
 
-{% endblock main %}
+{% endblock content %}
