@@ -6,16 +6,14 @@
 {% block content %}
 
     {% for hero in object_list %}
-        <div>
-            <!--style from the bootstrap file-->
-            <div>
-                <!--style from the bootstrap file-->
+        <div class="container">
+            <div class="container">
                 <h2> 
                     <a href="{{ hero.pk }}">{{ hero.name }}</a>
                 </h2>
             </div>
-            <div class="card-body bg-light text-dark">
-               <!--style from the bootstrap file-->
+            <div class="container">
+               
                 <p>
                     Hero: {{ hero.name }}
                 </p>
@@ -25,14 +23,14 @@
                 </p>
 
                 {% if missing %}
-                    <p class="border"><i class="fa fa-user fa-6x"></i></p>
+                    
                 {% endif %}
-                <!--missing conditional for border class-->
+                
 
                 <img width="300" src="/static/{{ hero.image }}" alt="{{ hero.identity }}">
             </div>
         </div>
 
-    {% endfor %}
+    {% endfor %} 
 
 {% endblock content %}
