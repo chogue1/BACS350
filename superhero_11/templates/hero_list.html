@@ -27,10 +27,18 @@
                 {% endif %}
                 
 
-                <img width="300" src="/static/{{ hero.image }}" alt="{{ hero.identity }}">
+                <img width="300" src="/static/{{ hero.image }}" alt="{{ hero.image }}">
+                <h4> 
+                    <a href="{{ hero.pk }}/">Edit</a>
+                </h4>
+                <h4> 
+                    <a href="{{ hero.pk }}/delete">Delete</a>
+                </h4>
             </div>
+            
         </div>
 
     {% endfor %} 
+    
 
 {% endblock content %}

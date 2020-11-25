@@ -1,12 +1,14 @@
 {% extends 'superhero_theme.html' %}
+{% block title %}Hero Detail{% endblock title %}
 {% block content %}
 
+{% if user.is_authenticated %}
 <main class="bg-dark text-light">
     <div class="container">
 
         <div class="text-center">
 
-            <a href="/" class="btn btn-primary m-3">Hero List</a>
+            <a href="/" class="btn btn-primary m-2">Hero List</a>
 
             <!--class based on bootstrap command to style the container-->
             
@@ -41,7 +43,9 @@
                             </p>
                             <p>
                                 <a href="{{ object.pk }}/" class="btn btn-primary">Edit</a>
+                                <a href="{{ object.pk }}/delete" class="btn btn-primary">Delete</a>
                             </p>
+                            
 
                         </div>
                         <div class="col-lg-6">
@@ -62,5 +66,66 @@
 
     </div>
 </main>
+{% else %}
+<main class="bg-dark text-light">
+    <div class="container">
+
+        <div class="text-center">
+
+            <a href="/" class="btn btn-primary m-2">Hero List</a>
+
+            <!--class based on bootstrap command to style the container-->
+            
+            <div class="card m-3 mb-5">
+
+                <div class="card-header bg-primary">
+                    <h2>
+                        <a class="text-light" href="{{ object.pk }}">{{ object.name }}</a>
+                    </h2>
+                </div>
+
+                <div class="card-body text-dark">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <p>
+                                Hero: {{ object.name }}
+                            </p>
+                            <p>
+                                Secret ID: {{ object.identity }}
+                            </p>
+                            <p>
+                                Description: {{ object.description }}
+                            </p>
+                            <p>
+                                Strength: {{ object.strength }}
+                            </p>
+                            <p>
+                                Weakness: {{ object.weakness }}
+                            </p>
+                            <p>
+                                Image: {{ object.image }}
+                            </p>
+                            
+
+                        </div>
+                        <div class="col-lg-6">
+
+                            {% if missing %}
+                            <p><i class="fa fa-user fa-6x"></i></p>
+                            {% endif %}
+
+                            
+                            <img width="300" src="/static/{{ object.image }}" alt="{{ object.identity }}">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</main>
+{% endif %}
 
 {% endblock content %}

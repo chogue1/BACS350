@@ -1,20 +1,24 @@
 <!-- templates/registration/login.html -->
-{% extends 'superhero_theme.html' %}
+{% extends 'base_login.html' %}
 {% load crispy_forms_tags %}
 {% block title %}Log In{% endblock title %}
 
 {% block content %}
 
-<h2>Log In</h2>
+    <div class="container">
 
-<form method="POST">
+        <h2>Log In</h2>
 
-    {% csrf_token %}
+        <form method="POST">
 
-    {{ form.as_p }} <!-- kept as_p instead of crispy -->
+            {% csrf_token %}
 
-    <button class="btn btn-success ml-2" type="submit">Log In</button>
+            {{ form|crispy }} <!-- kept as_p instead of crispy -->
 
-</form>
+            <button class="btn btn-success ml-2" type="submit">Log In</button>
+
+        </form>
+
+    </div>
 
 {% endblock content %}
