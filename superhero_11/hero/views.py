@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.views.generic import DetailView, ListView, TemplateView, DeleteView
 from django.views.generic.edit import CreateView, UpdateView
 from os.path import exists
+from django.urls import reverse_lazy
 
 from .models import Superhero
 
@@ -33,6 +34,7 @@ class HeroListView(ListView):
 class HeroDeleteView(DeleteView):
     template_name = "hero_delete.html"
     model = Superhero
+    success_url = reverse_lazy('')
 
 class HeroAddView(CreateView):
     template_name = "hero_add.html"

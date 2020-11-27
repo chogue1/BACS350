@@ -9,16 +9,14 @@
             <h1>Delete hero</h1>
     
             <form action="" method="post">{% csrf_token %}
-                <p>Are you sure you want to delete "{{ hero }}"?</p>
+                <p>Are you sure you want to delete "{{ object.identity }}"?</p>
                 <button class="btn btn-success" type="submit">Delete</button>
             </form>
         </div>
     {% else %}
-        <div class="container">
-      
-            <h1> You need to be logged in to perform this action </h1>
-    
-        </div>
+
+        {% include '_nologin.html' %}
+        
     {% endif %}
 
 {% endblock content %}
