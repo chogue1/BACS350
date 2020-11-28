@@ -1,5 +1,6 @@
 # hero/views.py
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.views.generic import DetailView, ListView, TemplateView, DeleteView
 from django.views.generic.edit import CreateView, UpdateView
@@ -31,17 +32,43 @@ class HeroListView(ListView):
     template_name = "hero_list.html"
     model = Superhero
 
-class HeroDeleteView(DeleteView):
+class HeroDeleteView(LoginRequiredMixin, DeleteView):
     template_name = "hero_delete.html"
     model = Superhero
     success_url = reverse_lazy('')
 
-class HeroAddView(CreateView):
+# class HeroDeleteView(DeleteView):
+#     model = Superhero
+#     template_name = 'hero_delete.html'
+#     context_object_name = 'hero'
+
+#     def delete(self, request, *args, **kwargs):
+#         self.object = self.get_object()
+#         self.object.userprofile.soft_delete()
+#         messages.success(request, 'Hero Deleted Successfully.')
+#         return HttpResponseRedirect(reverse('')) 
+
+# class HeroDeleteView(DeleteView):
+#     template_name = "hero_delete.html"
+#     model = Superhero
+#     success_url = reverse_lazy('')
+     
+#     def delete_view(request, id): 
+#         context = {} 
+#         obj = get_object_or_404(Superhero, id = id) 
+  
+#         if request.method =="POST": 
+#             obj.delete() 
+#             return HttpResponseRedirect("/") 
+  
+#         return render(request, "hero_delete.html", context) 
+
+class HeroAddView(LoginRequiredMixin, CreateView):
     template_name = "hero_add.html"
     model = Superhero
     fields = '__all__'
     
-class HeroEditView(UpdateView):
+class HeroEditView(LoginRequiredMixin, UpdateView):
     template_name = "hero_edit.html"
     model = Superhero
     fields = '__all__'
