@@ -35,7 +35,7 @@ class HeroListView(ListView):
 class HeroDeleteView(LoginRequiredMixin, DeleteView):
     template_name = "hero_delete.html"
     model = Superhero
-    success_url = reverse_lazy('')
+    success_url = reverse_lazy('hero_list')
 
 # class HeroDeleteView(DeleteView):
 #     model = Superhero
