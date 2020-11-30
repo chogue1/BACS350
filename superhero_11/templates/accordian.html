@@ -1,0 +1,13 @@
+{% extends 'workshop.html' %}
+
+{% block content %}
+
+    {% if accordion %}
+       
+        <h2> Accordion View</h2>
+            
+        {% include '_accordion.html' %}
+
+    {% endif %}
+
+{% endblock content %}
